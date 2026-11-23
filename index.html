@@ -34,9 +34,33 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
       rel="stylesheet"
     />
+
+    <style>
+      /* Inline critical loader — shows before React boots */
+      #root:empty::after {
+        content: '';
+        position: fixed;
+        inset: 0;
+        margin: auto;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: 3px solid rgba(201, 162, 74, 0.25);
+        border-top-color: #c9a24a;
+        animation: boot-spin 0.9s linear infinite;
+      }
+      @keyframes boot-spin {
+        to { transform: rotate(360deg); }
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
+    <noscript>
+      <p style="padding:24px;font-family:sans-serif;text-align:center">
+        Please enable JavaScript to view TABEER TRAVEL &amp; TOURS.
+      </p>
+    </noscript>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
